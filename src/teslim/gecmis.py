@@ -44,7 +44,7 @@ IZINLI_ALAN = re.compile(
     r"@(?:users\.noreply\.github\.com|example\.(?:com|org|net)|[\w.-]+\.(?:example|test|invalid|localhost))$",
     re.IGNORECASE,
 )
-IZINLI_ADRES = frozenset({"noreply@github.com", "noreply@anthropic.com", "cursoragent@cursor.com"})
+IZINLI_ADRES = frozenset({"noreply@github.com"})  # başka bot adresleri: ayardaki izinli_adresler
 
 
 def tc_gecerli(s):

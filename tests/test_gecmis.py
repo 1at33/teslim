@@ -36,7 +36,7 @@ def repo(tmp_path):
     return r
 
 
-AYAR = ayar_mod.Ayar(ic_iz=("ornek-kasa",), ic_belge=("TANIM*.md", "HARITA*.md", "karar-*.md"),
+AYAR = ayar_mod.Ayar(ic_iz=("ornek-kasa",), ic_belge=("TASLAK*.md", "PLAN*.md", "ic-not-*.md"),
                      saglayicilar=("alfa", "beta", "gama", "delta", "epsilon", "zeta"))
 
 
@@ -49,7 +49,7 @@ def test_temiz_repo_bulgu_vermez(repo):
     assert gecmis.tara(repo, [AD]) == ([], [])
 
 
-@pytest.mark.parametrize("adres", ["noreply@github.com", "cursoragent@cursor.com", "noreply@anthropic.com",
+@pytest.mark.parametrize("adres", ["noreply@github.com",
                                    "a@example.org", "a@baska.example", "9+x@users.noreply.github.com"])
 def test_izinli_adresler(repo, adres):
     commit(repo, eposta=adres, mesaj=f"c\n\nCo-authored-by: x <{adres}>")
@@ -217,7 +217,7 @@ def test_az_saglayici_liste_sayilmaz(repo):
     assert turler(repo) == set()
 
 
-@pytest.mark.parametrize("ad,tur", [("TANIM.md", "iç belge"), ("docs/HARITA-85-90.md", "iç belge"), ("alt/karar-1.md", "iç belge"),
+@pytest.mark.parametrize("ad,tur", [("TASLAK.md", "iç belge"), ("docs/PLAN-85-90.md", "iç belge"), ("alt/ic-not-1.md", "iç belge"),
                                     (".env", "sır dosyası"), (".env.local", "sır dosyası"), ("a/auth.json", "sır dosyası"),
                                     ("k.pem", "sır dosyası")])
 def test_yasak_yol_gecmiste_kalsa_da_yakalanir(repo, ad, tur):
@@ -249,7 +249,7 @@ def test_yer_tutucu_ev_yolu_yakalanmaz(repo, icerik):
 
 
 def test_ayar_bossa_kullanici_kaliplari_taranmaz(repo):
-    commit(repo, ad="TANIM.md", icerik="ornek" + "-kasa alfa beta gama delta epsilon\n")
+    commit(repo, ad="TASLAK.md", icerik="ornek" + "-kasa alfa beta gama delta epsilon\n")
     assert turler(repo, ayar=None) == set()
     assert turler(repo) == {"iç belge", "kişisel altyapı izi", "sağlayıcı listesi"}
 

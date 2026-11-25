@@ -68,7 +68,7 @@ Geçmiş taramasının türleri:
 
 | Tür | Nerede | Kaynak |
 |---|---|---|
-| yazar / committer / tagger e-postası | commit ve tag üst verisi | yerleşik; noreply, `example.*`, `.test` gibi ayrılmış alanlar izinli |
+| yazar / committer / tagger e-postası | commit ve tag üst verisi | yerleşik; noreply, `example.*`, `.test` gibi ayrılmış alanlar izinli; ajan araçlarının bot adresleri ayardaki `izinli_adresler` ile eklenir |
 | e-posta | mesajlar, dosyalar (ikili dosyalar dahil) | yerleşik |
 | ad | mesajlar, dosyalar | senin ad listen (`kisisel-adlar.txt`) |
 | TC kimlik no | mesajlar, metin dosyaları | yerleşik, sağlama haneleriyle doğrulanır |
@@ -83,7 +83,7 @@ Silinmiş dosyalar, yeniden adlandırılmış yollar ve force-push'la dallardan 
 
 ## Fiş
 
-Fiş, `<ayar dizini>/teslim/fis/<sahip>__<repo>.json` dosyasıdır: repo adı, kontrol anındaki tüm uzak ref'lerin
+Fiş, `<ayar dizini>/fis/<sahip>__<repo>.json` dosyasıdır: repo adı, kontrol anındaki tüm uzak ref'lerin
 (`git ls-remote`) özeti, kontrol edilen commit ve zaman. Ref özeti taramadan **önce** alınır; tarama sırasında
 gelen bir push fişi kendiliğinden geçersiz bırakır. Fiş şu durumlarda geçersizdir:
 

@@ -11,7 +11,7 @@ from teslim import ayar
 def test_dosya_yoksa_varsayilan(tmp_path):
     a = ayar.yukle(tmp_path / "yok.toml")
     assert a == ayar.Ayar()
-    assert a.ic_iz_deseni() is None and a.saglayici_deseni() is None and not a.ic_belge_mi("TANIM.md")
+    assert a.ic_iz_deseni() is None and a.saglayici_deseni() is None and not a.ic_belge_mi("TASLAK.md")
 
 
 def test_ornek_ayar_okunur():
@@ -54,10 +54,10 @@ def test_varsayilan_kok(tmp_path):
     assert ayar.fis_dizini(None, ortam) == beklenen / "fis"
 
 
-@pytest.mark.parametrize("yol,beklenen", [("TANIM.md", True), ("docs/tanim-v2.md", True), ("docs/karar-3.md", True),
+@pytest.mark.parametrize("yol,beklenen", [("TASLAK.md", True), ("docs/taslak-v2.md", True), ("docs/ic-not-3.md", True),
                                           ("docs/tanimlar.txt", False), ("README.md", False)])
 def test_ic_belge_glob(yol, beklenen):
-    a = ayar.Ayar(ic_belge=("TANIM*.md", "docs/karar-*.md"))
+    a = ayar.Ayar(ic_belge=("TASLAK*.md", "docs/ic-not-*.md"))
     assert a.ic_belge_mi(yol) is beklenen
 
 

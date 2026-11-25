@@ -7,7 +7,7 @@
 ic_iz = ["ornek-kasa", "benim-araclarim", "ozel-ajan-adi"]
 
 # Geçmişte bir kez bile bulunmaması gereken yollar (glob; tam yol ya da dosya adıyla eşleşir).
-ic_belge = ["TANIM*.md", "YOL-HARITASI*.md", "karar-*.md", "notlar/ic/*"]
+ic_belge = ["ic/*.md", "taslak-*.md", "notlar/ic/*"]
 
 # Tek dosyada liste gibi duramayacak adlar (kullandığın sağlayıcı ya da model adları).
 # Bir dosyada `saglayici_esik` kadar farklı ad geçerse bulgu sayılır.
