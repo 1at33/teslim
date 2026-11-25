@@ -1,0 +1,5 @@
+# Her satır bir ad. Bu dosya repoya girmez: ~/.config/teslim/kisisel-adlar.txt ya da TESLIM_ADLAR.
+# Adın, soyadın, kullanıcı adların, sık kullandığın takma adlar. Aşağıdakiler örnektir.
+Deniz Örnekoğlu
+Örnekoğlu
+ornek-kullanici

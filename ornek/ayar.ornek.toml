@@ -1,0 +1,25 @@
+# teslim ayarı. Kopyala: ~/.config/teslim/ayar.toml (Windows: %APPDATA%\teslim\ayar.toml)
+# ya da TESLIM_AYAR ile başka bir yol ver. Bu dosya repoya girmez; değerler örnektir.
+
+# Metinde geçmemesi gereken düz ifadeler (büyük/küçük harf fark etmez): kişisel not kasanın adı,
+# yalnız sende olan araç ya da klasör adları, takma adlar. Ev dizini yolları (C:\Users\<ad>, /home/<ad>)
+# bu listeye gerek olmadan her zaman taranır.
+ic_iz = ["ornek-kasa", "benim-araclarim", "ozel-ajan-adi"]
+
+# Geçmişte bir kez bile bulunmaması gereken yollar (glob; tam yol ya da dosya adıyla eşleşir).
+ic_belge = ["TANIM*.md", "YOL-HARITASI*.md", "karar-*.md", "notlar/ic/*"]
+
+# Tek dosyada liste gibi duramayacak adlar (kullandığın sağlayıcı ya da model adları).
+# Bir dosyada `saglayici_esik` kadar farklı ad geçerse bulgu sayılır.
+saglayicilar = ["alfa-ai", "beta-llm", "gama-bulut", "delta-model", "epsilon-api", "zeta-lab"]
+saglayici_esik = 5
+
+# E-posta taramasında izinli ek adresler (noreply ve example alanları zaten izinli).
+izinli_adresler = ["bot@ekip.example"]
+
+# Fiş kaç saat geçerli.
+gecerlilik_saat = 24
+
+# Ad listesi ve fiş dizini (isteğe bağlı; varsayılan ayar dizininin içi).
+# adlar_dosyasi = "~/.config/teslim/kisisel-adlar.txt"
+# fis_dizini = "~/.config/teslim/fis"

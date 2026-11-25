@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "teslim"
+version = "0.1.0"
+description = "Repo public olmadan önce son kontrol ve süreli fiş; fişsiz public yapma ve sürüm komutlarını reddeden Claude Code hook'u"
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff==0.17.3"]
+
+[project.scripts]
+teslim = "teslim.kontrol:main"
+teslim-gecmis = "teslim.gecmis:main"
+teslim-kapi = "teslim.kapi:cli"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
